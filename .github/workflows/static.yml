@@ -30,10 +30,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Use Node.js v16.8.0
+      - name: Use Node.js v^16.10.0
         uses: actions/setup-node@v3
         with:
-          node-version: v16.8.0
+          node-version: v^16.10.0
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Install Deps

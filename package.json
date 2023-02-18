@@ -2,6 +2,7 @@
   "name": "boonlang-menu",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://austinrivas.github.io/boonlang-menu/",
   "dependencies": {
     "@types/node": "^17.0.45",
     "@types/react": "^18.0.28",

@@ -19,8 +19,8 @@ async function formatRow(row: IGSheetRow): Promise<IGSheetRow> {
     const src = row.c[2].v as string
     const id = getImageId(src)
     const downloadSrc = `https://drive.google.com/uc?export=download&id=${id}`
-    const rawDest = `./images/raw/${id}.jpg`
-    const processedDest = `./images/processed/${id}.jpg`
+    const rawDest = `./images/${id}.jpg`
+    const processedDest = `./build/images/${id}.jpg`
     await downloadImage(downloadSrc, rawDest)
     await resizeImage(rawDest, processedDest)
     const base64Image = await convertImageToBase64(processedDest)

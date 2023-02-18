@@ -15,8 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "react-snap",
-    "fetch": "mkdir -p ./images/processed && mkdir -p ./images/raw && tsx ./scripts/fetch-data.ts",
+    "fetch": "mkdir -p ./build/images && mkdir -p ./images && tsx ./scripts/fetch-data.ts",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,7 +42,6 @@
     "got": "^12.5.3",
     "image-to-base64": "^2.2.0",
     "node-fetch": "^3.3.0",
-    "react-snap": "^1.23.0",
     "sharp": "^0.31.3"
   }
 }

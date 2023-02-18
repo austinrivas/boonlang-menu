@@ -1,13 +1,38 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination } from "swiper"
-import init from './gsheet-client'
+import { EntresCollection } from "./models/entres"
+import { DrinksCollection } from "./models/drinks"
 import "swiper/css"
 import "swiper/css/pagination"
 import "./App.css"
 
+interface IAppState {
+  entres: EntresCollection,
+  drinks: DrinksCollection
+}
+
 export default function App() {
-  const data = init()
+  const [data, setData] = useState<IAppState>({ 
+    entres: new EntresCollection(), 
+    drinks: new DrinksCollection() 
+  })
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const [entres, drinks] = await Promise.all([
+        new EntresCollection().fetch(), 
+        new DrinksCollection().fetch()
+      ])
+      setData({ 
+        entres, 
+        drinks
+      })
+    }
+    fetchData()
+  }, [])
+
+  console.log('data', data)
   return (
     <div id="app">
       <Swiper

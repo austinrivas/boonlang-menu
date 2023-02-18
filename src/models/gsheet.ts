@@ -1,3 +1,5 @@
+import fetch from 'node-fetch'
+
 export interface IGSheetColumn {
   id: string,
   label: string,
@@ -27,24 +29,24 @@ export interface IGSheetQueryResponse {
   table: IGSheetTable
 }
 
-export class GSheet<T extends IGSheetQueryResponse> {
-  private sheetId: undefined | string = process.env.REACT_APP_GSHEET_ID
+export class GSheet {
   private queryString: string = encodeURIComponent('Select *')
   public sheetName: string
-  public data: null | T
+  public id: string
 
-  constructor(sheetName: string) {
+  constructor(id: string, sheetName: string) {
+    this.id = id
     this.sheetName = sheetName
-    this.data = null
   }
 
-  private async formatResponse(resp: string): Promise<T> {
+  private async formatResponse(resp: string): Promise<IGSheetQueryResponse> {
+    console.log(resp)
     const jsonData = JSON.parse(resp.substring(47).slice(0, -2))
-    return jsonData as T
+    return jsonData as IGSheetQueryResponse
   }
 
-  public async query(): Promise<T> {
-    const base = `https://docs.google.com/spreadsheets/d/${this.sheetId}/gviz/tq?`
+  public async query(): Promise<IGSheetQueryResponse> {
+    const base = `https://docs.google.com/spreadsheets/d/${this.id}/gviz/tq?`
     const url = `${base}&sheet=${this.sheetName}&tq=${this.queryString}`
     return await fetch(url)
       .then(res => res.text())

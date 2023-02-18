@@ -1,11 +1,9 @@
 import { MenuCollection } from "./menu-collection"
-import { GSheet, IGSheetQueryResponse } from "./gsheet"
+import { GSheet } from "./gsheet"
 
-interface IEntresSheetResponse extends IGSheetQueryResponse {}
+const sheet = new GSheet(process.env.REACT_APP_GSHEET_ID as string, 'Entres')
 
-const sheet = new GSheet<IEntresSheetResponse>('Entres')
-
-export class EntresCollection extends MenuCollection<IEntresSheetResponse> {
+export class EntresCollection extends MenuCollection {
     name = sheet.sheetName
     sheet = sheet
 }

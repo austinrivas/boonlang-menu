@@ -39,6 +39,8 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Install Deps
         run: yarn --frozen-lockfile
+      - name: Fetch Data
+        run: yarn fetch
       - name: Build Pages
         run: yarn build
       - name: Upload artifact

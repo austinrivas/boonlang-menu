@@ -36,6 +36,8 @@ jobs:
           node-version: v16.8.0
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Install Deps
+        run: yarn
       - name: Build Pages
         run: yarn build
       - name: Upload artifact

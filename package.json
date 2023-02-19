@@ -13,8 +13,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "fetch": "mkdir -p ./build/images && mkdir -p ./images && tsx ./scripts/fetch-data.ts",
-    "eject": "react-scripts eject",
-    "trigger": "curl -H \"Accept: application/vnd.github+json\" -H \"Authorization: token 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\" --request POST --data '{\"event_type\": \"build\"}' https://api.github.com/repos/yourname/yourrepo/dispatches"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

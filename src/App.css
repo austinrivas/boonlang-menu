@@ -8,12 +8,12 @@ body {
   height: 100%;
 }
 
+/* Force Landscape */
+
 @media screen and (orientation: portrait) {
   html {
     transform: rotate(-90deg);
     transform-origin: left top;
-    width: 100vh;
-    height: 100vw;
     overflow-x: hidden;
     position: absolute;
     top: 100%;
@@ -29,6 +29,8 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Swiper */
 
 .swiper {
   width: 100%;
@@ -56,3 +58,50 @@ body {
 .swiper-v {
   background: #eee;
 }
+
+/* item-slide */
+.item-slide {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.item-slide > img {
+  width: 100%;
+}
+
+/* Bottom left text */
+.item-slide > .bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.item-slide > .top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.item-slide > .top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.item-slide > .bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.item-slide > .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 

@@ -5,8 +5,8 @@ export async function resizeImage(src: string, dest: string) {
     console.log('Resizing File:', src)
     await sharp(src)
       .resize({
-        width: 100,
-        height: 100
+        width: 1340,
+        height: 800
       }).toFile(dest)
   } catch (error) {
     throw error

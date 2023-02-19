@@ -34,10 +34,11 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.45",
+    "@types/node-fetch": "^2.6.2",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "@types/node-fetch": "^2.6.2",
     "@types/sharp": "^0.31.1",
+    "dotenv": "^16.0.3",
     "file-saver": "^2.0.5",
     "got": "^12.5.3",
     "image-to-base64": "^2.2.0",

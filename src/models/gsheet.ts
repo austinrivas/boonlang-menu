@@ -40,7 +40,6 @@ export class GSheet {
   }
 
   private async formatResponse(resp: string): Promise<IGSheetQueryResponse> {
-    console.log(resp)
     const jsonData = JSON.parse(resp.substring(47).slice(0, -2))
     return jsonData as IGSheetQueryResponse
   }
